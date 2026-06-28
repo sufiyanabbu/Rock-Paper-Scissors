@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     text-align: center;
+    background-color:aquamarine;
 }
 h1{
     background-color: rgb(1, 30, 56);
@@ -47,7 +48,7 @@ img{
     font-size: 2rem;
 }
 .msg-container{
-    margin-top: 3rem;
+    padding: 3rem;
 }
 .msg{
     margin-top: 4rem;
