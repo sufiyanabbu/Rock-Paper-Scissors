@@ -1,22 +1,29 @@
     let userScore =0;
     let compScore=0;
 
+    const userScorePara = document.querySelector("#user-score");
+    const compScorePara = document.querySelector("#bot-score");
+
     const msg = document.querySelector(".msg");
     const choices  = document.querySelectorAll(".choice");
 
     const showWinner = (userWin) => {
         if(userWin){
-            console.log("You Win!");
+            userScore++;
+            userScorePara.innerText = userScore;
             msg.innerText = "You Win!"
+            msg.style.backgroundColor = "green";
         }
         else{
-            console.log("You lose!")
+            compScore++;
+            compScorePara.innerText = userScore;
             msg.innerText = "You lose!";
+            msg.style.backgroundColor = "red";
         }
     }
     const drawGame = () => {
-        console.log("Game was draw");
         msg.innerText = "Game Draw";
+        msg.style.backgroundColor = "gray"
     }
     const genCompChoice = () => {
         //rock, paper, scissor
@@ -26,10 +33,8 @@
     }
     let userWin = true;
     const playgame = (userChoice)=>{
-        console.log("user choice = ",userChoice);
         //computer choice
         const compChoice = genCompChoice();
-        console.log("bot choice = ",compChoice);
         if(userChoice === compChoice){
             drawGame();
         }

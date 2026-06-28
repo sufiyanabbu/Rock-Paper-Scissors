@@ -41,7 +41,7 @@ img{
     gap: 4rem;
     margin-top: 6rem;
 }
-#user-score, #Bot-score{
+#user-score, #bot-score{
     font-size: 4rem;
 }
 .score-board{
