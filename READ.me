@@ -1,0 +1,124 @@
+# RPS // ARENA
+
+A premium, futuristic Rock Paper Scissors game built as a single self-contained HTML file — no frameworks, no build tools, no dependencies.
+
+Designed with an agency-level aesthetic: black + orange gradient palette, glassmorphism UI, Canvas 2D fake-3D icons, particle FX, and smooth 60fps animations throughout.
+
+---
+
+## Preview
+
+Open `rps-arena.html` directly in any modern browser. No server required.
+
+---
+
+## Features
+
+### Visual Design
+- Black (`#050505`) + Orange (`#ff6a00`) + Gold (`#ffb000`) color system
+- Animated background grid with floating particles and soft light rays
+- Noise texture overlay for depth
+- Glassmorphism score cards and battle panels
+- Custom orange glowing cursor with lagging ring tracker
+- Parallax page tilt following mouse movement
+
+### 3D Icons (Canvas 2D)
+- Rock, Paper, Scissors rendered with radial gradients, lighting, highlights, and drop shadows
+- Idle float/bob animation on all three at 60fps
+- Orange glow rim activates on hover
+- Shine sweep effect on hover
+
+### Bot Thinking Animation
+- Spinning ring loader
+- Slot-machine emoji cycling (Rock → Paper → Scissors)
+- Ease-out slowdown — dramatically lands on the final move
+
+### Battle & Impact FX
+- Both choices displayed in a side-by-side battle panel with continuous glow animation
+- Particle burst at the impact point on reveal
+- Screen shake on collision
+- Orange flash overlay
+- Win: confetti rain from top + large orange burst
+- Loss: red shake + red flash
+
+### Scoreboard
+- Player / Draws / Bot score cards with animated bump on score change
+- Live win rate % calculated per round
+- Current streak, best streak, rounds played
+- Streak badge drops in at 3x+
+
+---
+
+## Tech Stack
+
+| Layer | Approach |
+|---|---|
+| Rendering | Canvas 2D (fake-3D icons + particle FX + background grid) |
+| Animations | `requestAnimationFrame` loops + CSS transitions |
+| Typography | Space Grotesk + Bebas Neue via Google Fonts |
+| Styling | Pure CSS with custom properties |
+| Logic | Vanilla JavaScript |
+| Dependencies | **None** (Google Fonts is the only external request) |
+
+---
+
+## File Structure
+
+```
+rps-arena.html    ← entire project in one file
+README.md
+```
+
+HTML, CSS, and JavaScript are kept in clearly separated sections within the file for readability.
+
+---
+
+## How to Run
+
+```bash
+# Option 1 — just open it
+open rps-arena.html
+
+# Option 2 — serve locally (optional)
+npx serve .
+# or
+python -m http.server 8000
+```
+
+No build step. No npm install. No config.
+
+---
+
+## Game Logic
+
+Standard Rock Paper Scissors rules:
+
+- Rock beats Scissors
+- Scissors beats Paper
+- Paper beats Rock
+
+The bot picks randomly each round. Scores, win rate, and streak are tracked in memory for the session.
+
+---
+
+## Browser Support
+
+Works in all modern browsers (Chrome, Firefox, Safari, Edge). Requires Canvas 2D API support — available in every browser released after 2012.
+
+---
+
+## Portfolio Notes
+
+Built as a frontend portfolio project to demonstrate:
+
+- Creative Canvas 2D rendering without Three.js
+- Smooth particle system from scratch
+- Premium UI/UX design with pure CSS
+- Zero-dependency, single-file architecture
+- Agency-level visual polish on a simple game concept
+
+---
+
+## License
+
+MIT — free to use, modify, and showcase.
