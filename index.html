@@ -3,35 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock-Paper-Scissors</title>
+    <title>RPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <div class="choices">
-        <div class="choice" id="rock">
-            <img src="images/rock.png" alt="">
-        </div>
-        <div class="choice" id="paper">
-            <img src="images/paper.png" alt="">
-        </div>
-        <div class="choice" id="scissor">
-            <img src="images/scissors.png" alt="">
-        </div>
+    <body>
+ 
+<!-- CUSTOM CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+ 
+<!-- FX CANVAS -->
+<canvas id="fx-canvas"></canvas>
+ 
+<!-- STREAK -->
+<div id="streak-badge" id="streak-badge">🔥 <span id="streak-text">3x Streak!</span></div>
+ 
+<!-- BACKGROUND -->
+<div id="bg">
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-diagonal"></div>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+  <div class="noise-overlay"></div>
+</div>
+ 
+<!-- APP -->
+<div id="app">
+ 
+  <header>
+    <div class="logo">RPS<span> //</span> ARENA</div>
+    <div class="header-badge">Live PvE Match</div>
+  </header>
+ 
+  <!-- SCOREBOARD -->
+  <div id="scoreboard">
+    <div class="score-card player-card" id="card-player">
+      <div class="score-label">Player</div>
+      <div class="score-value" id="score-player">0</div>
     </div>
-    <div class="score-board">
-        <div class="score">
-            <p id="user-score">0</p>
-            <p>you</p>
-        </div>
-        <div class="score">
-            <p  id="bot-score">0</p>
-            <p>Bot</p>
-        </div>
+    <div class="score-card" id="card-draw">
+      <div class="score-label">Draws</div>
+      <div class="score-value" id="score-draw">0</div>
+      <div class="score-extra" id="winrate-text">Win Rate —</div>
     </div>
-    <div class="msg-container">
-        <p class="msg">play your game</p>
+    <div class="score-card bot-card" id="card-bot">
+      <div class="score-label">Bot</div>
+      <div class="score-value" id="score-bot">0</div>
     </div>
-</body>
+  </div>
+  <div id="stat-row">
+    <span>Streak <b id="stat-streak">0</b></span>
+    <span>Rounds <b id="stat-rounds">0</b></span>
+    <span>Best Streak <b id="stat-best">0</b></span>
+  </div>
+ 
+  <!-- ARENA -->
+  <div id="arena">
+    <div class="arena-label">Choose your move</div>
+ 
+    <!-- CHOICE BUTTONS -->
+    <div id="choices">
+      <button class="choice-btn" data-choice="rock" aria-label="Rock">
+        <div class="choice-shell">
+          <canvas class="choice-canvas" id="cv-rock"></canvas>
+        </div>
+        <span class="choice-name">Rock</span>
+      </button>
+      <button class="choice-btn" data-choice="paper" aria-label="Paper">
+        <div class="choice-shell">
+          <canvas class="choice-canvas" id="cv-paper"></canvas>
+        </div>
+        <span class="choice-name">Paper</span>
+      </button>
+      <button class="choice-btn" data-choice="scissors" aria-label="Scissors">
+        <div class="choice-shell">
+          <canvas class="choice-canvas" id="cv-scissors"></canvas>
+        </div>
+        <span class="choice-name">Scissors</span>
+      </button>
+    </div>
+ 
+    <!-- BOT THINKING -->
+    <div id="thinking-overlay">
+      <div class="thinking-label">Bot is thinking…</div>
+      <div class="thinking-ring"></div>
+      <div id="slot-display">✊</div>
+    </div>
+ 
+    <!-- BATTLE AREA -->
+    <div id="battle-area">
+      <div class="battle-side">
+        <div class="battle-label">You</div>
+        <div class="battle-icon">
+          <canvas id="cv-battle-player" width="100" height="100"></canvas>
+        </div>
+        <div class="battle-choice-name" id="player-choice-name">—</div>
+      </div>
+      <div class="vs-divider">
+        <div class="vs-text">VS</div>
+        <div id="impact-zone"></div>
+      </div>
+      <div class="battle-side">
+        <div class="battle-label">Bot</div>
+        <div class="battle-icon">
+          <canvas id="cv-battle-bot" width="100" height="100"></canvas>
+        </div>
+        <div class="battle-choice-name" id="bot-choice-name">—</div>
+      </div>
+    </div>
+ 
+    <!-- RESULT -->
+    <div id="result-banner">
+      <div id="result-title"></div>
+      <div id="result-sub"></div>
+    </div>
+    <button id="play-again">↺ Play Again</button>
+ 
+  </div>
+ 
+  <footer>RPS Arena © 2026 — Pure CSS &amp; Canvas</footer>
+</div>
 <script src="app.js"></script>
+</body>
 </html>
